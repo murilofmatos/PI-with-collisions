@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pi Collision Simulation</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+  <style>
+    body {
+      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+      display: flex;
+      flex-direction: column;
+      font-family: "JetBrains Mono", monospace;
+    }
+    main {
+      margin: 0 auto;
+    }
+    #controls {
+      margin-top: 10px;
+      font-size: 1.4rem;
+    }
+    #digits-input {
+      font-size: 1.4rem;
+      width: 70px;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid black;
+    }
+    #controls {
+      display: flex;
+      gap: 50px;
+    }
+    #start-sim {
+      font-family: "Jetbrains Mono";
+      font-size: 1.3rem;
+      cursor: pointer;
+      padding: 2px 4px;
+    }
+  </style>
+  <body>
+    <main>
+      <div id="canvas-container"></div>
+      <div id="controls">
+        <div>
+          <label for="digits-input">Digits: </label>
+          <input id="digits-input" type="number" />
+        </div>
+        <button id="start-sim" onclick="startSimulation()">
+          Start Simulation
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
