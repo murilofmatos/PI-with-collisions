@@ -17,7 +17,8 @@ function setup() {
   digits = parseInt(digitsInput.value);
   ratio = pow(100, parseInt(digitsInput.value) - 1);
   box1 = new Box(100, 1, 0, 50, "#D82148", 0);
-  box2 = new Box(300, ratio, 0, 100, "#355AD5", box1.size);
+  let b2Size = digits <= 10 ? 100 : 200;
+  box2 = new Box(300, ratio, 0, b2Size, "#355AD5", box1.size);
   digitsInput.value = 1;
 }
 
@@ -29,7 +30,8 @@ function startSimulation() {
   steps = pow(10, constrain(digits, 1, 7));
   ratio = pow(100, digits - 1);
   box1 = new Box(100, 1, 0, 50, "#D82148", 0);
-  box2 = new Box(300, ratio, -1 / steps, 200, "#355AD5", box1.size);
+  let b2Size = digits <= 10 ? 100 : 200;
+  box2 = new Box(300, ratio, -1 / steps, b2Size, "#355AD5", box1.size);
   box2.m = ratio;
   box2.y = height - box2.size;
   collisions = 0;
